@@ -13,9 +13,10 @@
 </head>
 <body style="display: block; margin: 0px">
     <div class="container-fluid" style="padding: 0 !important;">
-        <header class="bg-success" style="border-bottom: 2px solid #1cffd2">
-            <img src="https://scontent.fhan2-4.fna.fbcdn.net/v/t1.15752-9/s2048x2048/106275268_1003673336718082_2105351401163650908_n.png?_nc_cat=105&_nc_sid=b96e70&_nc_ohc=eJNV3g785I0AX-wSaCa&_nc_ht=scontent.fhan2-4.fna&oh=9c8c010cb6fe70594f4549b9105d859b&oe=5F2B6579" alt="UwU" class="rounded-circle d-inline" style="width: 10%; height: 10%">
-            <h1 class="d-inline">A very nice header</h1>
+        <header>
+            <h1>Essay Helper</h1>
+            <p>Your best pal to do homework with!</p>
+            <p>Type in your essay and we will do the rest!</p>
         </header>
         <div class="row" style="margin: 10px 10px 10px 50px">
             <div class="col-md-8" style="padding: 20px">
@@ -47,7 +48,7 @@
         document.getElementById('check-ranking').addEventListener('click', function(){
             var map = new Map();
             var paras = document.getElementById('paper').value.split("\n");
-            var badWords = common = ['',
+            var badWords = ['',
 'i',
  'me',
  'my',
