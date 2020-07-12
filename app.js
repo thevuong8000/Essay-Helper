@@ -2,15 +2,16 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 var exec = require('child_process').exec;
+var execFile = require('child_process').execFile;
 
 
-// Đây là để execute file java đây
-var compileIt = 'java ./src/proj5/Client.java';
-
-exec(compileIt, function(error, stdout, stderr) {
-    console.log(stdout);
-});
-
+// Execute the java file and generate essay-converted.txt
+var compileIt = 'cd TheGrammarChecker\\src\\proj5 && java Client.java';
+function getConvertedFile(){
+    exec(compileIt, function(error, stdout, stderr) {
+        fs.writeFileSync("essay-converted.txt", stdout);
+    });
+}
 
 var app = express();
 
@@ -26,14 +27,19 @@ app.get('/', function(req, res){
 
 app.post('/', urlencodeParser, function(req, res){
     // console.log(req.body.essay);
-    fs.writeFileSync('./output.txt', req.body.essay);
-    res.render('register-success');
+    fs.writeFileSync('./input.txt', req.body.essay); // viết file đây
+    setTimeout(getConvertedFile, 2000);
+    setTimeout(() => {
+        var originalData = fs.readFileSync('input.txt', 'utf8');
+        var convertedData = fs.readFileSync('essay-converted.txt', 'utf8');
+        res.render('result', {ori: originalData, conv: convertedData});
+    }, 4000);
 });
 
 app.get('/contact', function(req, res){
     res.render('contact');
 });
 
-    
+
 
 app.listen(3000);

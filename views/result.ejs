@@ -7,9 +7,16 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js" integrity="sha384-DBjhmceckmzwrnMMrjI7BvG2FmRuxQVaTfFYHgfnrdfqMhxKt445b7j3KBQLolRl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="main.css">
-    <title>The Essay Helper</title>
+    <title>Result Convertion</title>
 </head>
 <body style="display: block; margin: 0px">
-    
+    <div class="container-fluid" style="padding: 0 !important;">
+        <header class="bg-success" style="border-bottom: 2px solid #1cffd2">
+            <h1 class="d-inline">Here are old and new essay</h1>
+        </header>
+        <textarea id="original" name="original" style="width: 100%; height: 20vw"><%= ori %></textarea>
+        <p style="color: red">After being converted</p>
+        <textarea id="converted" name="converted" style="width: 100%; height: 20vw"><%= conv %></textarea>
+    </div>
 </body>
 </html>
