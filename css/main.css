@@ -6,5 +6,25 @@
 }
 
 .clear {
-	clear: both;
+     clear: both;
 }
+
+header {
+     display: block;
+     padding: 5px;
+     top: 0;
+     height: 150px;
+     background-color: #FFB6C1;
+     text-align: center;
+     font-size: 17px;
+ }
+ h1 {
+     font-family: Georgia, serif;
+     color: white;
+     letter-spacing: 5px;
+ }
+ header > p {
+     margin-bottom: -10px;
+     color: white;
+     font-style: italic;
+ }
