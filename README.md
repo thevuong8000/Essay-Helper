@@ -1,15 +1,16 @@
-### Grammar Checker is an app that help client to avoid repeating the same word.
+### Grammar Checker is an app that helps client to avoid repeating the same word.
 
 # Requirement:
 `
 nodejs: v12.16.0
+Java SDK: v11
 `
 
 # Details:
-1. Get into Grammar-Checker folder and type command line: `node app.js` or `nodemon app.js`
+1. Get into Essay Helper folder and type command line: `node app.js` or `nodemon app.js`
 2. Start your browser and access **localhost:3000**
-3. Type your Essay into the textarea
-4. Click **Check ranking** to see how frequent your words are
+3. Type your Essay into the text area
+4. Click **Check ranking** to see frequencies of words in your essay.
    Click **Convert** to get your converted essay with better word choice.
    
 ### Author:
