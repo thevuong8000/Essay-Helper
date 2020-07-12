@@ -1,13 +1,13 @@
 {
-  "name": "node-js-playlist-master",
+  "name": "Grammar Checker",
   "version": "1.0.0",
-  "description": "CSS and asset files for the Net Ninja YouTube nodejs playlist",
+  "description": "Improve essay with better word choice",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Tran Duc Manh",
+  "author": "Tran Duc Manh, Son Nguyen",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
