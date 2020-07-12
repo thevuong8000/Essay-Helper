@@ -2,7 +2,8 @@
 
 # Requirement:
 `nodejs: v12.16.0`
-`Java SDK: v11`
+
+`Java SDK: v11.0.5.10`
 # Details:
 1. Get into Essay Helper folder and type command line: `node app.js` or `nodemon app.js`
 2. Start your browser and access **localhost:3000**
