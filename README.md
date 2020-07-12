@@ -1,4 +1,4 @@
-### Grammar Checker is an app that helps client to avoid repeating the same word.
+### Essay Helper is an app that helps client to avoid repeating the same word.
 
 # Requirement:
 `nodejs: v12.16.0`
