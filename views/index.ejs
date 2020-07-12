@@ -47,12 +47,148 @@
         document.getElementById('check-ranking').addEventListener('click', function(){
             var map = new Map();
             var paras = document.getElementById('paper').value.split("\n");
-            var badWords = ['i', 'the', 'am', 'is', 'are', 'was', 'were', 'can', 'could', 'so', ''];
+            var badWords = common = ['',
+'i',
+ 'me',
+ 'my',
+ 'myself',
+ 'we',
+ 'our',
+ 'ours',
+ 'ourselves',
+ 'you',
+ 'your',
+ 'yours',
+ 'yourself',
+ 'yourselves',
+ 'he',
+ 'him',
+ 'his',
+ 'himself',
+ 'she',
+ 'her',
+ 'hers',
+ 'herself',
+ 'it',
+ 'its',
+ 'itself',
+ 'they',
+ 'them',
+ 'their',
+ 'theirs',
+ 'themselves',
+ 'what',
+ 'which',
+ 'who',
+ 'whom',
+ 'this',
+ 'that',
+ 'these',
+ 'those',
+ 'am',
+ 'is',
+ 'are',
+ 'was',
+ 'were',
+ 'be',
+ 'been',
+ 'being',
+ 'have',
+ 'has',
+ 'had',
+ 'having',
+ 'do',
+ 'does',
+ 'did',
+ 'doing',
+ 'a',
+ 'an',
+ 'the',
+ 'and',
+ 'but',
+ 'if',
+ 'or',
+ 'because',
+ 'as',
+ 'until',
+ 'while',
+ 'of',
+ 'at',
+ 'by',
+ 'for',
+ 'with',
+ 'about',
+ 'against',
+ 'between',
+ 'into',
+ 'through',
+ 'during',
+ 'before',
+ 'after',
+ 'above',
+ 'below',
+ 'to',
+ 'from',
+ 'up',
+ 'down',
+ 'in',
+ 'out',
+ 'on',
+ 'off',
+ 'over',
+ 'under',
+ 'again',
+ 'further',
+ 'then',
+ 'once',
+ 'here',
+ 'there',
+ 'when',
+ 'what',
+ 'where',
+ 'why',
+ 'which',
+ 'who',
+ 'whom',
+ 'how',
+ 'all',
+ 'any',
+ 'both',
+ 'each',
+ 'few',
+ 'more',
+ 'most',
+ 'other',
+ 'some',
+ 'such',
+ 'no',
+ 'nor',
+ 'not',
+ 'only',
+ 'own',
+ 'same',
+ 'so',
+ 'than',
+ 'too',
+ 'very',
+ 's',
+ 't',
+ 're',
+ 'can',
+ 'will',
+ 'just',
+ 'don',
+ 'should',
+ 'now',
+ 'past',
+ 'future',
+ 'either',
+ 'neither'];
             for(var para of paras){
                 words = para.split(" ");
                 for(var word of words){
                     word = word.toLowerCase();
-                    if(badWords.includes(word)) continue;
+                    if(badWords == "") continue;
                     if(!word.charAt(word.length - 1).match(/[a-z]/i)) word = word.substring(0, word.length - 1);
                     if(map.get(word) == null) map.set(word, 1);
                     else map.set(word, map.get(word) + 1);
@@ -67,10 +203,18 @@
             rankingBox.innerHTML = "<ul>";
             var threshold = 10;
             for (let [key, value] of map) {     // get data sorted
+                if(badWords.includes(key)) continue;
                 rankingBox.innerHTML += "<li>" + key + ' ' + value + "</li>";
-                console.log(key + ' ' + value);
+                // console.log(key + ' ' + value);
                 threshold--;
                 if(threshold < 0) break;
+            }
+            if(threshold > 0){
+                for(var i = 0; i < badWords.length && threshold > 0; i++){
+                    if(map.get(badWords[i]) == null) continue;
+                    rankingBox.innerHTML += "<li>" + badWords[i] + ' ' + map.get(badWords[i]) + "</li>";
+                    threshold--;
+                }
             }
             rankingBox.innerHTML += "</ul>";
         });
@@ -101,7 +245,6 @@
             return;
         }
         else paper.value = event.target.result;
-    // paper.src = event.target.result;
     });
     reader.readAsText(file);
     });
