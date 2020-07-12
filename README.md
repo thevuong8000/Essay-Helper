@@ -14,5 +14,5 @@ nodejs: v12.16.0
    
 ### Author:
 ## Katorin: https://github.com/thevuong8000
-## Son Nguyen: https://github.com/kyrienguyen5701
-## Chi Nguyen: https://github.com/kaylee2504
+## Kyrie Nguyen: https://github.com/kyrienguyen5701
+## Kaylee Nguyen: https://github.com/kaylee2504
