@@ -11,7 +11,7 @@
 4. Click **Check ranking** to see frequencies of words in your essay.
    Click **Convert** to get your converted essay with better word choice.
    
-### Author:
+### Authors:
 ## Katorin: https://github.com/thevuong8000
 ## Kyrie Nguyen: https://github.com/kyrienguyen5701
 ## Kaylee Nguyen: https://github.com/kaylee2504
